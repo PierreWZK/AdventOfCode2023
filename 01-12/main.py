@@ -18,7 +18,7 @@ def star_one():
 
 # Premier EXO
 resultat_final = star_one()
-print(resultat_final)
+print("exo 1 = " + str(resultat_final))
 
 #####################################################################################################
 
@@ -45,7 +45,7 @@ def star_two():
     total = 0
     
     # Parcourir chaque ligne du fichier
-    for line in open('input2.txt'):
+    for line in open('input.txt'):
         # Extraire les valeurs correspondant aux mots écrits en lettres
         values = [map_table[v] for v in re.findall(pattern, line)]
         
@@ -56,5 +56,5 @@ def star_two():
     return total
 
 # Deuxième EXO
-# resultat_final2 = star_two()
-# print(resultat_final2)
+resultat_final2 = star_two()
+print("exo 2 = " + str(resultat_final2))
