@@ -12,7 +12,7 @@ L'Advent of Code est un défi annuel créé par Eric Wastl. Il propose une séri
 
 | Day | Name                                               | Solutions                               |
 | --- | -------------------------------------------------- | --------------------------------------- |
-| 1   | [Trebuchet?!](https://adventofcode.com/2023/day/1) | [Python](2023/01-12/main.py) |
+| 1   | [Trebuchet?!](https://adventofcode.com/2023/day/1) | [Python](2023/01-12/main.py)            |
 | 2   |                                                    |                                         |
 | 3   |                                                    |                                         |
 | 4   |                                                    |                                         |
