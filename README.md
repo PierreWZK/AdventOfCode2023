@@ -8,6 +8,36 @@ Bienvenue dans l'univers captivant de l'Advent of Code ! Chaque année, du 1er a
 
 L'Advent of Code est un défi annuel créé par Eric Wastl. Il propose une série de 25 énigmes de programmation, de difficulté croissante, qui sont dévoilées quotidiennement. Les participants sont invités à résoudre ces énigmes en utilisant le langage de programmation de leur choix.
 
+## Mon avancé :
+
+| Day | Name                                               | Solutions                               |
+| --- | -------------------------------------------------- | --------------------------------------- |
+| 1   | [Trebuchet?!](https://adventofcode.com/2023/day/1) | [Python](01-12/main.py) |
+| 2   |                                                    |                                         |
+| 3   |                                                    |                                         |
+| 4   |                                                    |                                         |
+| 5   |                                                    |                                         |
+| 6   |                                                    |                                         |
+| 7   |                                                    |                                         |
+| 8   |                                                    |                                         |
+| 9   |                                                    |                                         |
+| 10  |                                                    |                                         |
+| 11  |                                                    |                                         |
+| 12  |                                                    |                                         |
+| 13  |                                                    |                                         |
+| 14  |                                                    |                                         |
+| 15  |                                                    |                                         |
+| 16  |                                                    |                                         |
+| 17  |                                                    |                                         |
+| 18  |                                                    |                                         |
+| 19  |                                                    |                                         |
+| 20  |                                                    |                                         |
+| 21  |                                                    |                                         |
+| 22  |                                                    |                                         |
+| 23  |                                                    |                                         |
+| 24  |                                                    |                                         |
+| 25  |                                                    |                                         |
+
 ## Objectif du défi
 
 L'objectif de l'Advent of Code va au-delà de la simple résolution de problèmes algorithmiques. C'est l'occasion parfaite pour les programmeurs de tous niveaux de:
