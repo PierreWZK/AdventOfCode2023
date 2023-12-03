@@ -1,3 +1,5 @@
+import re
+
 def star_one():
     # Ouvrir un fichier et en récupérer les lignes
     lines = (open("input.txt")).readlines()
@@ -15,8 +17,6 @@ resultat_final = star_one()
 print("exo 1 = " + str(resultat_final))
 
 #####################################################################################################
-
-import re
 
 def star_two():
     # Ouvrir un fichier et en récupérer les lignes
