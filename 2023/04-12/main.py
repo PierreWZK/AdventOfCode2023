@@ -10,6 +10,7 @@ def star_one():
     # Créer les variables qui vont contenir les données
     result = 0
     
+    # Code here
     for line in lines :
         # Déclaration des variables
         nombre_gagnant = []
@@ -56,6 +57,7 @@ def star_two():
     # Créer les variables qui vont contenir les données
     result = 0
     
+    # Code here
     
     return result
 
