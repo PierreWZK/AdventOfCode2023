@@ -7,8 +7,7 @@ def star_one():
     # Créer les variables qui vont contenir les données
     result = 0
     
-    
-    # Additionnez les pieces de moteurs manquantes
+    # Code here
     
     return result
 
@@ -25,6 +24,7 @@ def star_two():
     # Créer les variables qui vont contenir les données
     result = 0
     
+    # Code here
     
     return result
 
