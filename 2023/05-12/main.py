@@ -1,5 +1,13 @@
+import re
+
 def star_one():
+    # Ouvrir un fichier et en récupérer les lignes
+    lines = (open("input.txt")).readlines()
+
+    # Créer les variables qui vont contenir les données
+    result = 0
     
+    # Code here
     
     return result
 
@@ -9,12 +17,16 @@ print("exo 1 = " + str(resultat_final))
 
 #####################################################################################################
 
-import re
-
 def star_two():
+    # Ouvrir un fichier et en récupérer les lignes
+    lines = (open("input.txt")).readlines()
+
+    # Créer les variables qui vont contenir les données
+    result = 0
     
+    # Code here
     
-    return total
+    return result
 
 # Deuxième EXO
 resultat_final2 = star_two()

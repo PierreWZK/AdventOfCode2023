@@ -51,98 +51,37 @@ print("exo 1 = " + str(resultat_final))
 #####################################################################################################
 
 def star_two():
-    # Ouvrir un fichier et en récupérer les lignes
-    lines = (open("input.txt")).readlines()
+    # Liste pour stocker les cartes (chaque carte est représentée par un dictionnaire)
+    cards = []
 
-    # Créer les variables qui vont contenir les données
-    result = 0
-    numeroLigne = 0
-    liste_extension = []
-    
-    # Code here
-    for line in lines :
-        numeroLigne += 1
-        if numeroLigne > 5:
-            break
-        # Déclaration des variables
-        nombre_gagnant = []
-        liste = []
-        n_gagnant = -1
-        
-        # Mise à jour des variables
-        line = line.replace('\n', '')
-        array_lines = line.split(': ')
+    # Ouvre le fichier 'input.txt' en mode lecture
+    with open('input.txt', 'r') as file:
+        # Parcours chaque ligne du fichier
+        for line in file:
+            # Divise la ligne en utilisant le séparateur '|' et récupère les parties
+            parts = line.split('|')
+            
+            # Extrait les numéros gagnants et les numéros du joueur à partir des parties
+            winning_numbers = list(map(int, parts[0].split()[2:]))
+            your_numbers = list(map(int, parts[1].split()))
 
-        # Récupération des nombres gagnants et de la liste
-        AllNumbers = array_lines[1]
-        nombre_gagnant = AllNumbers.split(' | ')[0]
-        nombre_gagnant = nombre_gagnant.split(' ')
-        liste = AllNumbers.split(' | ')[1]
-        liste = liste.split(' ')
-        # print(nombre_gagnant, liste)
+            # Ajoute la carte (sous forme de dictionnaire) à la liste
+            cards.append({"winning_numbers": winning_numbers, "your_numbers": your_numbers})
 
-        # Suppression des espaces vides
-        nombre_gagnant = list(filter(None, nombre_gagnant))
-        liste = list(filter(None, liste))
+    # Liste pour stocker le nombre de copies de chaque carte
+    card_copies = [1] * len(cards)
 
-        # Comparaison des nombres gagnants et de la liste
-        # Si un nombre gagnant est dans la liste, alors on ajoute 2^n à result (1, 1, 2, 4, 8, 16, 32, 64, 128, 256)
-        n = 0
-        for i in range(len(liste)):
-            if liste[i] in nombre_gagnant:
-                n += 1
-                nn_gagnant = n_gagnant
-                if n_gagnant == -1:
-                    nn_gagnant = 0
-                result += 2 ** nn_gagnant
-                n_gagnant += 1
-                
-                # Rajouter dans la nouvelle liste liste_extension les cartes qui suive celle actuelle par nombre gagnant
-                # Exemple : "Card 1" à 3 bonnes réponses, alors on rajoute "Card 2", "Card 3" et "Card 4" dans la liste
-                # On fait ça pour chaque carte
-                # On fera le calcul de cette liste après le for line pour ne pas avoir de problème de boucle
-                liste_extension.append((open('input.txt').readlines())[numeroLigne + (n-1)])
-                
-    # Écrire liste_extension dans un fichier 'input2.txt'
-    # with open('input2.txt', 'w') as f:
-    #     for item in liste_extension:
-    #         f.write("%s" % item)
-                
-    # On fait le calcul de la liste_extension
-    for extension in liste_extension:
-        # Déclaration des variables
-        nombre_gagnant = []
-        liste = []
-        n_gagnant = -1
-        
-        # Mise à jour des variables
-        extension = extension.replace('\n', '')
-        array_lines = extension.split(': ')
+    # Parcours chaque carte
+    for i in range(len(cards)):
+        # Compte le nombre de correspondances entre les numéros gagnants et les numéros du joueur
+        matches = len(set(cards[i]["winning_numbers"]) & set(cards[i]["your_numbers"]))
 
-        # Récupération des nombres gagnants et de la liste
-        AllNumbers = array_lines[1]
-        nombre_gagnant = AllNumbers.split(' | ')[0]
-        nombre_gagnant = nombre_gagnant.split(' ')
-        liste = AllNumbers.split(' | ')[1]
-        liste = liste.split(' ')
+        # Parcours les cartes suivantes qui ont une correspondance et met à jour le nombre de copies
+        for j in range(i + 1, min(i + 1 + matches, len(cards))):
+            card_copies[j] += card_copies[i]
 
-        # Suppression des espaces vides
-        nombre_gagnant = list(filter(None, nombre_gagnant))
-        liste = list(filter(None, liste))
-
-        # Comparaison des nombres gagnants et de la liste
-        # Si un nombre gagnant est dans la liste, alors on ajoute 2^n à result (1, 1, 2, 4, 8, 16, 32, 64, 128, 256)
-        n = 0
-        for i in range(len(liste)):
-            if liste[i] in nombre_gagnant:
-                n += 1
-                nn_gagnant = n_gagnant
-                if n_gagnant == -1:
-                    nn_gagnant = 0
-                result += 2 ** nn_gagnant
-                n_gagnant += 1
-    
-    return result
+    # Retourne la somme des copies de toutes les cartes
+    return sum(card_copies)
 
 # Deuxième EXO
 resultat_final2 = star_two()
